@@ -1,0 +1,64 @@
+/* Enkel CSS-reset */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #252525;
+    position: sticky;
+    text-align: center;
+
+}
+.loga {
+    width: 270px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 93px;
+
+    
+    
+}
+.mail {
+    float: right;
+    margin-top: 25px;
+    margin-right: 35px;
+}
+.fa-envelope{
+    font-size: 35px;
+    color: #fff;
+
+}
+.p-kontakt {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+footer{
+    background: #252525;
+    color: #fff; 
+    margin-top: 200px;
+}
+footer .fa-home{
+    color: #DD9933;
+    font-size: 18px;
+}
+footer .fa-envelope{
+    color: #DD9933;
+    font-size: 18px;    
+}
+footer ul li{
+    margin-top: 10px;
+}
+footer th{
+    font-size: 20px;
+    text-transform: uppercase; 
+}
+footer td{
+}
