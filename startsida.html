@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Startsida</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mapbox.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="./javascript.js" defer></script>
 </head>
 <body>
     <div class="kontainer">
@@ -27,7 +29,7 @@
                 </div>
                 <div>
                     <img class="bild" src="./bilder/dados_hackar_tomat.png" alt="vit bild">
-                    <button class="plats2">Kungsängens Ålderdomshem</button>
+                    <button class="plats2">Kungsängens Ålderdomshem</button>                    
                 </div>
                 <div>
                     <img class="bild" src="./bilder/Catering.jpg" alt="vit bild">
@@ -36,19 +38,42 @@
             </div>
             <div class="vilkaarvigrid">
                 <div class="vilkaarvi">
-                    <h1 class="vilkaarvih1">VILKA ÄR VI?</h1>
+                    <h1 class="vilkaarvih1">Vilka är vi?</h1>
                     <p class="vilkaarvi-text">Dados Kök och Catering grundades 2005 av Sadudin Alic. <br>
                         2013 ombildades företaget till Dados kök AB. Vi vidareutbildar oss ständigt<br> 
                         för att kunna tillgodose just dina behov.</p>
                 </div>
                 <div class="dadosglad">
-
                     <img class="dadobild" src="./bilder/Dado_glad.jpg" alt="">
                 </div>
             </div>
         </main>
         <footer>
-
+            <div class="information">
+                <div>
+                    <h2 class="lokalh2">här finns vi</h2>
+                    <ul>
+                        <li class="lokal"><i class="fa fa-home"></i>Olivecronas väg 5, 113 61 Stockholm</li>
+                        <li class="lokal"><i class="fa fa-home"></i>Kungsängens Ålderdomshem</li>
+                        <li class="lokal"><i class="fa fa-envelope"></i>sabb.lunch@live.se</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="tiderh2">Öppettider Sabbatsberg</h2>
+                    <ul>
+                        <li class="tider">Måndag-Fredag: 07.00-16.00</li>
+                        <li class="tider">Lördag-Söndag: Stängt</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="tiderh2">Öppettider Kungsängen</h2>
+                    <ul>
+                        <li class="tider">Måndag-Fredag: 07.00-16.00</li>
+                        <li class="tider">Lördag-Söndag: Stängt</li>
+                    </ul>
+                </div>
+                <div class="karta"></div>
+            </div>
         </footer>
     </div>
 </body>
