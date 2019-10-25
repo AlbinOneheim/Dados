@@ -3,53 +3,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sabatsberg</title>
+    <title>Kontakt</title>
     <link rel="stylesheet" href="style.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./javascript.js" defer></script>
 </head>
 <body>
     <header>
         <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
         <div class="mail">
-            <a href="./kontakt.html">
+            <a href="./kontakt.php">
                 <i class='fa fa-envelope-o'></i>
                 <p class="p-kontakt">Kontakt</p>
             </a>
-        </div>
+        </div>   
     </header>
-    <main class="sabatsberg">
-        <h2 class="lunchmenyh2">Lunchmeny</h2>
-        <h3 class="lunchmenyh3">Sabatsbergs sjukhus</h3>
-        <?php
-            
-            echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
-        ?>
-        <div class="matmeny">
-            <div class="måndag">
-                <h4 class="dag">Måndag</h4>
-                <p class="lunch-p">Nötfärsbiffar med morot och grädde serveras med potatis och purjolökpuré. Stekt gösfilé serveras med frästa bönor, kokt potatis samt kall citron/dillsås, pepparrot och räkor. Dagens vegetariska: Sötpotatis och morotsoppa</p>
-            </div>
-            <div class="tisdag">
-                <h4 class="dag">Tisdag</h4>
-                <p class="lunch-p">Nötfärsbiffar med morot och grädde serveras med potatis och purjolökpuré. Stekt gösfilé serveras med frästa bönor, kokt potatis samt kall citron/dillsås, pepparrot och räkor. Dagens vegetariska: Sötpotatis och morotsoppa</p>
-            </div>
-            <div class="onsdag">
-                <h4 class="dag">Onsdag</h4>
-                <p class="lunch-p">Nötfärsbiffar med morot och grädde serveras med potatis och purjolökpuré. Stekt gösfilé serveras med frästa bönor, kokt potatis samt kall citron/dillsås, pepparrot och räkor. Dagens vegetariska: Sötpotatis och morotsoppa</p>
-            </div>
-            <div class="torsdag">
-                <h4 class="dag">Torsdag</h4>
-                <p class="lunch-p">Nötfärsbiffar med morot och grädde serveras med potatis och purjolökpuré. Stekt gösfilé serveras med frästa bönor, kokt potatis samt kall citron/dillsås, pepparrot och räkor. Dagens vegetariska: Sötpotatis och morotsoppa</p>
-            </div>
-            <div class="fredag">
-                <h4 class="dag">Fredag</h4>
-                <p class="lunch-p">Nötfärsbiffar med morot och grädde serveras med potatis och purjolökpuré. Stekt gösfilé serveras med frästa bönor, kokt potatis samt kall citron/dillsås, pepparrot och räkor. Dagens vegetariska: Sötpotatis och morotsoppa</p>
+    <main>
+        <div class="kontakta">
+            <h1>Kontaka oss</h1>
+            <hr>
+            <p>Har du frågor eller funderingar? Vill du lämna en förfrågan på catering?</p>
+            <p>Gäller ditt meddelande catering? Glöm inte att lämna information om tema och antal gäster!</p>
+        </div>
+        <div class="kontaktaformulär">
+            <div>
+                <label>Ditt namn</label>
+                <input type="text" name="namn">    
+                <label>Telefon</label>
+                <input type="tel" name="tel"> 
+                <p>Obligatoriskt om det gäller catering</p>     
+                <label>Epostadress</label>
+                <input type="email" name="email">
+                <label>Ämne</label>
+                <select>
+                    <option value="Catering">Catering</option>
+                    <option value="Övrigt">Övrigt</option>
+                </select>
+                <p>Specifiera vad ditt meddelande gäller</p>
+                <label>Meddelande</label>
+                <input class="meddelande" type="text">
+                <button>Skicka</button>
             </div>
         </div>
-
-
     </main>
     <footer>
         <div class="information">

@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
         <div class="mail">
-            <a href="./kontakt.html">
+            <a href="./kontakt.php">
                 <i class='fa fa-envelope-o'></i>
                 <p class="p-kontakt">Kontakt</p>
             </a>
@@ -21,11 +22,15 @@
     </header>
     <main class="sabatsberg">
         <h2 class="lunchmenyh2">Lunchmeny</h2>
-        <h3 class="lunchmenyh3">Sabatsbergs sjukhus</h3>
+        <h3 class="lunchmenyh3">Kungsängens Ålderdomshem</h3>
+        <div class="pilar">
+        <p></p>
         <?php
             
             echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
         ?>
+        <a href="./kungsängen2.php" class="pil-höger-1"><i class='fas fa-arrow-right'></i></a>
+    </div>
         <div class="matmeny">
             <div class="måndag">
                 <h4 class="dag">Måndag</h4>

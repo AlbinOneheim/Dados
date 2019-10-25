@@ -6,17 +6,16 @@
     <title>Startsida</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mapbox.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="./javascript.js" defer></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
     <div class="kontainer">
         <header>
             <img class="loga" src="./bilder/dadoslogo.png" alt="">
             <div class="mail">
-                <a href="./kontakt.html">
-                    <i class='far fa-envelope'></i>
+                <a class="a-kontakt" href="./kontakt.php">
+                    <i class='fa fa-envelope-o'></i>
                     <p class="p-kontakt">Kontakt</p>
                 </a>
             </div>
@@ -24,23 +23,20 @@
         <main>
             <div class="platser">
                 <div>
-                    <img class="bild" src="./bilder/plain-white-background.jpg" alt="vit bild">
-                    <button class="plats1">Sabbatsbergs Sjukhus</button>
+                    <a href="./sabatsberg.php" class="plats1">Sabbatsbergs Sjukhus</a>
                 </div>
                 <div>
-                    <img class="bild" src="./bilder/dados_hackar_tomat.png" alt="vit bild">
-                    <button class="plats2">Kungsängens Ålderdomshem</button>                    
+                    <a href="./catering.html" class="plats2">Catering</a>
                 </div>
                 <div>
-                    <img class="bild" src="./bilder/Catering.jpg" alt="vit bild">
-                    <button class="plats3">Catering</button>
+                    <a href="./kungsängen.php" class="plats3">Kungsängens Ålderdomshem</a>
                 </div>
             </div>
             <div class="vilkaarvigrid">
                 <div class="vilkaarvi">
                     <h1 class="vilkaarvih1">Vilka är vi?</h1>
                     <p class="vilkaarvi-text">Dados Kök och Catering grundades 2005 av Sadudin Alic. <br>
-                        2013 ombildades företaget till Dados kök AB. Vi vidareutbildar oss ständigt<br> 
+                        2013 ombildades företaget till Dados kök AB. Vi vidareutbildar oss ständigt<br>
                         för att kunna tillgodose just dina behov.</p>
                 </div>
                 <div class="dadosglad">
@@ -54,7 +50,7 @@
                     <h2 class="lokalh2">här finns vi</h2>
                     <ul>
                         <li class="lokal"><i class="fa fa-home"></i>Olivecronas väg 5, 113 61 Stockholm</li>
-                        <li class="lokal"><i class="fa fa-home"></i>Kungsängens Ålderdomshem</li>
+                        <li class="lokal"><i class="fa fa-home"></i>Lillsjö Badväg Kungsängen</li>
                         <li class="lokal"><i class="fa fa-envelope"></i>sabb.lunch@live.se</li>
                     </ul>
                 </div>
@@ -72,7 +68,33 @@
                         <li class="tider">Lördag-Söndag: Stängt</li>
                     </ul>
                 </div>
-                <div class="karta"></div>
+                <div class="karta">
+                    <div id='map' style='width: 400px; height: 300px;'></div>
+                    <script>
+                        mapboxgl.accessToken =
+                            'pk.eyJ1IjoicG9udHVzY2FybHN0ZWR0IiwiYSI6ImNqcGRxNmFuZTM5bWszcXBocmcwdWcwdGEifQ.leQVSDz6ohBcC-Ac_DbhqA';
+                        var map = new mapboxgl.Map({
+                            container: 'map',
+                            style: 'mapbox://styles/mapbox/streets-v11',
+                            zoom: 8.5,
+                            center: [18.037525, 59.438519],
+
+                        });
+                        var marker1 = new mapboxgl.Marker().setLngLat([18.047525, 59.338519]).addTo(map)
+                        var marker2 = new mapboxgl.Marker().setLngLat([17.723015, 59.492018]).addTo(map)
+
+                        var popup1 = new mapboxgl.Popup()
+                            .setLngLat([18.047525, 59.338519])
+                            .setHTML("<p>Sabbatsbergs sjukhus</p>")
+                            .addTo(map);
+                        var popup2 = new mapboxgl.Popup()
+                            .setLngLat([17.723015, 59.492018])
+                            .setHTML("<p>Kungsängen Ålderdomshem</p>")
+                            .addTo(map);
+
+                            map.addControl(new mapboxgl.NavigationControl());
+                    </script>
+                </div>
             </div>
         </footer>
     </div>
