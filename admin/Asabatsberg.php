@@ -22,20 +22,33 @@
     <main class="sabatsberg">
         <h2 class="lunchmenyh2">Lunchmeny</h2>
         <h3 class="lunchmenyh3">Sabatsbergs sjukhus</h3>
-        <?php 
+        <?php
+            
             echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
-
-            $dagar = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag"];
-            $rader = file("./admin/sabatsberg.txt");
-            echo "<div class=\"matmeny\">";
-            foreach ($rader as $index => $rad) {
-                echo "<div class=\"måndag\">
-                <h4 class=\"dag\">" . $dagar[$index] . "</h4>
-                <p class=\"lunch-p\">$rad</p></div>";   
-            }
-           echo "</div>";
         ?>
-        
+        <form action="spara.php" class="matmeny" method="POST">
+            <div class="måndag">
+                <label class="dag">Måndag</label>
+                <textarea class="lunch-p" name="måndag"></textarea>
+            </div>
+            <div class="tisdag">
+                <label class="dag">Tisdag</label>
+                <textarea class="lunch-p" name="tisdag"></textarea>
+            </div>
+            <div class="onsdag">
+                <label class="dag">Onsdag</label>
+                <textarea class="lunch-p" name="onsdag"></textarea>
+            </div>
+            <div class="torsdag">
+                <label class="dag">Torsdag</label>
+                <textarea class="lunch-p" name="torsdag"></textarea>
+            </div>
+            <div class="fredag">
+                <label class="dag">Fredag</label>
+                <textarea class="lunch-p" name="fredag"></textarea>
+            </div>
+            <button>Skicka</button>
+        </form>
 
 
     </main>
