@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sabatsberg</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,7 +26,7 @@
             
             echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
         ?>
-        <form action="spara.php" class="matmeny" method="POST">
+        <form action="sparaS.php" class="matmeny" method="POST">
             <div class="måndag">
                 <label class="dag">Måndag</label>
                 <textarea class="lunch-p" name="måndag"></textarea>
