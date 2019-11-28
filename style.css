@@ -285,6 +285,7 @@ main .dag {
     font-size: 30px;
     margin: 30px;
     color: #8d8787;
+    text-align: center;
 }
 main .matmeny {
     margin: auto;
@@ -303,49 +304,7 @@ main .pil-höger-1 {
     margin-left: -100px;
     color: #000;
 }
-main .pil-vänster-2 {
-    font-size: 28px;
-    text-align: right;
-    margin-top: 11px;
-    margin-right: -100px;
-    color: #000;
-}
-main .pil-höger-2 {
-    font-size: 28px;
-    text-align: left;
-    margin-top: 11px;
-    margin-left: -100px;
-    color: #000;
-}
-main .pil-vänster-3 {
-    font-size: 28px;
-    text-align: right;
-    margin-top: 11px;
-    margin-right: -100px;
-    color: #000;
-}
-main .pil-höger-3 {
-    font-size: 28px;
-    text-align: left;
-    margin-top: 11px;
-    margin-left: -100px;
-    color: #000;
-}
-main .pil-vänster-4 {
-    font-size: 28px;
-    text-align: right;
-    margin-top: 11px;
-    margin-right: -100px;
-    color: #000;
-}
-main .pil-höger-4 {
-    font-size: 28px;
-    text-align: left;
-    margin-top: 11px;
-    margin-left: -100px;
-    color: #000;
-}
-main .pil-vänster-5 {
+main .pil-vänster-1 {
     font-size: 28px;
     text-align: right;
     margin-top: 11px;

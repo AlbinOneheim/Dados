@@ -22,9 +22,7 @@
     <?php
         $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-
         
-
         if ($name && $password) {
             if ($name == "a" && $password == "a") {
                echo "<p>Rätt inloggning</p>"; 
@@ -32,11 +30,8 @@
             }
             else {
             echo "<p>Fel inloggning</p>";
-            }
-           
-             
-        } 
-        
+            }   
+        }   
     
     ?>
     </form>
