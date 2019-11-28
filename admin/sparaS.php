@@ -26,7 +26,8 @@
         fwrite($handtag, "$torsdag\n");
         fwrite($handtag, "$fredag\n");
         fclose($handtag);
-        
+        echo "<h1>Matmenyn har sparats för Sabatsberg</h1>";
+        echo "<a href=\"./Asabatsberg.php\">Gå tillbaka</a>";
     }
 
     ?>

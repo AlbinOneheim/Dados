@@ -22,9 +22,10 @@
     <main class="sabatsberg">
         <h2 class="lunchmenyh2">Lunchmeny</h2>
         <h3 class="lunchmenyh3">Sabatsbergs sjukhus</h3>
+        <a class="plats1" href="./Akungsängen.php">Gå till kungängens matmeny</a>
         <?php
             
-            echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
+            echo "<h4 class=\"veckonummer\">Vecka" . date("W") . "</h4>";
         ?>
         <form action="sparaS.php" class="matmeny" method="POST">
             <div class="måndag">

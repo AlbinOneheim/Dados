@@ -25,7 +25,8 @@
         fwrite($handtag, "$torsdag\n");
         fwrite($handtag, "$fredag\n");
         fclose($handtag);
-        
+        echo "<h1>vecka $vecka har sparats</h1>";
+        echo "<a href=\"./Akungsängen.php\">Gå tillbaka</a>";
     }
 
     ?>

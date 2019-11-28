@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kontakt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
     <link rel="stylesheet" href="style.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
@@ -27,25 +28,25 @@
             <p>Gäller ditt meddelande catering? Glöm inte att lämna information om tema och antal gäster!</p>
         </div>
         <div class="kontaktaformulär">
-            <div>
-                <label>Ditt namn</label>
-                <input type="text" name="namn">    
-                <label>Telefon</label>
-                <input type="tel" name="tel"> 
-                <p>Obligatoriskt om det gäller catering</p>     
-                <label>Epostadress</label>
-                <input type="email" name="email">
-                <label>Ämne</label>
-                <select>
-                    <option value="Catering">Catering</option>
-                    <option value="Övrigt">Övrigt</option>
-                </select>
-                <p>Specifiera vad ditt meddelande gäller</p>
-                <label>Meddelande</label>
-                <input class="meddelande" type="text">
-                <button>Skicka</button>
+                <div>
+                    <label>Ditt namn</label>
+                    <input type="text" name="namn">    
+                    <label>Telefon</label>
+                    <input type="tel" name="tel"> 
+                    <p>Obligatoriskt om det gäller catering</p>     
+                    <label>Epostadress</label>
+                    <input type="email" name="email">
+                    <label>Ämne</label>
+                    <select name="kategori" class="kategori">
+                        <option value="Catering">Catering</option>
+                        <option value="Övrigt">Övrigt</option>
+                    </select>
+                    <p>Specifiera vad ditt meddelande gäller</p>
+                    <label>Meddelande</label>
+                    <input name="meddelande"class="meddelande" type="text">
+                    <button>Skicka</button>
+                </div>
             </div>
-        </div>
     </main>
     <footer>
         <div class="information">

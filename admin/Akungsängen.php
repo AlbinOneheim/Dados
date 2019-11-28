@@ -12,27 +12,22 @@
 <body>
     <header>
         <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
-        <div class="mail">
-            <a href="./kontakt.html">
-                <i class='fa fa-envelope-o'></i>
-                <p class="p-kontakt">Kontakt</p>
-            </a>
-        </div>
     </header>
     <main class="sabatsberg">
         <h2 class="lunchmenyh2">Lunchmeny</h2>
-        <h3 class="lunchmenyh3">Sabatsbergs sjukhus</h3>
+        <h3 class="lunchmenyh3">Kungsängen</h3>
+        <a class="plats1" href="./Asabatsberg.php">Gå till sabatsbergs matmeny</a>
         <?php
-            echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
+            echo "<h4 class=\"veckonummer\">Vecka" . date("W") . "</h4>";
         ?>
-        <form action="sparaK.php" class="matmeny" method="POST">
+        <form action="./sparaK.php" class="matmeny" method="POST">
             <?php
             $vecka = date("W");
             for ($i = 0; $i < 5; $i++) { 
                 if ($i == 0) {
-                    echo "<input type=\"radio\" name=\"vecka\" value=\"$vecka\" checked> v$vecka";
+                    echo "<input type=\"radio\" name=\"vecka\" value=\"$vecka\" checked> v$vecka<br>";
                 } else {
-                    echo "<input type=\"radio\" name=\"vecka\" value=\"$vecka\"> v$vecka";
+                    echo "<input type=\"radio\" name=\"vecka\" value=\"$vecka\"> v$vecka<br>";
                 }
                 
                 if ($vecka == 52) {
@@ -40,6 +35,7 @@
                 }else {
                     $vecka++;
                 }
+                
             }
             ?>
             <div class="måndag">

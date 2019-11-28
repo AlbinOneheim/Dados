@@ -53,7 +53,7 @@ header .p-kontakt {
 
 main .platser{
     width: 100%;
-    height: 150px;
+    height: 350px;
     background: whitesmoke ;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -81,7 +81,7 @@ main .plats1:hover, .plats2:hover, .plats3:hover{
     cursor: pointer;
     background: #444242;
     border: 3px solid #444242;
-    transition-duration: 800ms;
+    transition-duration: 500ms;
 }
 main .vilkaarvigrid{
     display: grid;
@@ -249,7 +249,6 @@ main .kontaktaformulär button:hover{
     transition-duration: 500ms;
     cursor: pointer;
 }
-
 /* css för sabatsberg / kungsängen */
 main .sabatsberg {
     font-family: "Source Sans Pro" sans-serif;
@@ -284,7 +283,7 @@ main .veckonummer:after{
 main .dag {
     font-size: 30px;
     margin: 30px;
-    color: #8d8787;
+    color: #444242;
     text-align: center;
 }
 main .matmeny {
@@ -295,7 +294,7 @@ main .matmeny {
 main .lunch-p {
     font-size: 18px;
     padding-bottom: 30px;
-    color: #8d8787;
+    color: #767676;
 }
 main .pil-höger-1 {
     font-size: 28px;
@@ -314,7 +313,7 @@ main .pil-vänster-1 {
 main .pilar {
     text-align: center;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* css för catering */
@@ -350,25 +349,58 @@ main p {
 }
 main .cirklar .fa-thumbs-o-up{
     color: #DD9933;
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 10px;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #DD9933;
     border-radius: 50%;
+    margin-bottom: 30px;
 }
 main .cirklar .fa-user-o{
     color: #DD9933;
-    font-size: 40px;
+    font-size: 25px;
     margin-left: 10px;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #DD9933;
     border-radius: 50%;
+    margin-bottom: 35px;
 }
 main .cirklar .fa-truck{
     color: #DD9933;
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 10px;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #DD9933;
     border-radius: 50%;
+    margin-bottom: 30px;
 }
+main .catering-kontakt{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+main .catering-kontakt h3{
+    font-family: sans-serif;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+main .catering-kontakt a{
+    color: #DD9933;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #DD9933;
+    padding: 20px;
+    
+} 
+main .catering-kontakt a:hover{
+    cursor: pointer;
+    transition-delay: 300ms;
+    transition-duration: 800ms;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #DD9933;
+    background: #DD9933;
+    padding: 20px;
+    
+} 
