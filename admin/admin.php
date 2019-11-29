@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="kontainer">
-    <form action="./Akungsängen.php" method="POST">
+    <form action="./Astartsida.php" method="POST">
     <h1>Inloggning</h1>
     <label for="">Användarnamn</label>
     <input name="name" type="text" required>

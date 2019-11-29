@@ -43,7 +43,7 @@
                     </select>
                     <p>Specifiera vad ditt meddelande gäller</p>
                     <label>Meddelande</label>
-                    <input name="meddelande"class="meddelande" type="text">
+                    <textarea name="meddelande" class="meddelande" cols="30" rows="10"></textarea>
                     <button>Skicka</button>
                 </div>
             </div>

@@ -31,8 +31,15 @@
         if (!$vecka) {
             $vecka = date("W");
         }
+        
         $nästaVecka = $vecka + 1;
+        if ($nästaVecka > 52) {
+            $nästaVecka = 1;
+        }
         $tillbakaVecka = $vecka - 1;
+        if ($tillbakaVecka < 1) {
+            $tillbakaVecka = 52;
+        }
 
         echo "<a href=\"./kungsängen.php?vecka=$tillbakaVecka\"         class=\"pil-vänster-1\"><i class='fas fa-arrow-left'></i></a>";
         echo "<h4 class=\"veckonummer\">Vecka $vecka</h4>";
