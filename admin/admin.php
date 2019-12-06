@@ -27,21 +27,21 @@ session_start();
             $rader = file("info.txt") or die("Kan inte öppna filen");
             foreach ($rader as $rad) {
                 $delar = explode(" ", $rad);
-                $nyNamn = $delar[0];
-                $hash = $delar[1];  
+                $nyNamn = trim($delar[0]);
+                $hash = trim($delar[1]);  
         
                 if ($namn == $nyNamn) {
-        
                     if (password_verify($losenord, $hash)) {
-                        if (isset($_SESSION['login'])) {
-                            header("location: ./Astartsida.php");
-                        } 
+                        $_SESSION['login'] = true;
+                        header("location: ./Astartsida.php");
                     } else {
                         echo "<p>Fel användarnamn eller lösenord!</p>";
                     }
+                } else {
+                    echo "<p>Användarnamnet stämmer inte!</p>";
                 }
             }
-            echo "<p>Fel användarnamn eller lösenord!</p>";
+            echo "<p>Användarnamn eller lösenord stämmer inte!</p>";
         }
         $från = filter_input(INPUT_GET, "från", FILTER_SANITIZE_STRING);
         if ($från) {
