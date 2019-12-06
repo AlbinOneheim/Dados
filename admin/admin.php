@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (!$_SESSION['login']) {
-    $_SESSION['login'] = false;
-}
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -36,7 +33,7 @@ if (!$_SESSION['login']) {
                 if ($namn == $nyNamn) {
         
                     if (password_verify($losenord, $hash)) {
-                        if ($_SESSION['login'] = true) {
+                        if (isset($_SESSION['login'])) {
                             header("location: ./Astartsida.php");
                         } 
                     } else {

@@ -1,7 +1,6 @@
 <?php
 session_start();
-if (!$_SESSION['login']) {
-    $_SESSION['login'] = false;
+if (!isset($_SESSION['login'])) {
     header("location: ./admin.php?från=sparaS");
 }
 ?>

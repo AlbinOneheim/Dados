@@ -1,7 +1,6 @@
 <?php
 session_start();
-if (!$_SESSION['login']) {
-    $_SESSION['login'] = false;
+if (!isset($_SESSION['login'])) {
     header("location: ./admin.php?från=logout.php");
 }
 ?>
@@ -15,7 +14,7 @@ if (!$_SESSION['login']) {
 </head>
 <body>
     <?php
-    $_SESSION['login'] = false;
+    session_destroy();
     echo "<h1>Du är utloggad</h1>";
     ?>
     <a href="./admin.php">Logga in</a>
