@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['login'])) {
-    header("location: ./admin.php?från=Astartsida");
-}
-?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
