@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!$_SESSION['login']) {
+    $_SESSION['login'] = false;
+    header("location: ./admin.php?från=Akungsängen");
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -17,6 +24,7 @@
         <h2 class="lunchmenyh2">Lunchmeny</h2>
         <h3 class="lunchmenyh3">Kungsängen</h3>
         <a class="plats1" href="./Asabatsberg.php">Gå till sabatsbergs matmeny</a>
+        <a href="./logout.php">Logga ut</a>
         <?php
             echo "<h4 class=\"veckonummer\">Vecka" . date("W") . "</h4>";
         ?>
@@ -38,25 +46,10 @@
                 
             }
             ?>
-            <div class="måndag">
-                <label class="dag">Måndag</label>
-                <textarea class="lunch-p" name="måndag"></textarea>
-            </div>
-            <div class="tisdag">
-                <label class="dag">Tisdag</label>
-                <textarea class="lunch-p" name="tisdag"></textarea>
-            </div>
-            <div class="onsdag">
-                <label class="dag">Onsdag</label>
-                <textarea class="lunch-p" name="onsdag"></textarea>
-            </div>
-            <div class="torsdag">
-                <label class="dag">Torsdag</label>
-                <textarea class="lunch-p" name="torsdag"></textarea>
-            </div>
-            <div class="fredag">
-                <label class="dag">Fredag</label>
-                <textarea class="lunch-p" name="fredag"></textarea>
+        <form action="sparaS.php" class="matmeny" method="POST">
+            <div class="veckomeny">
+                <label class="dag">veckomeny</label>
+                <textarea rows="30" cols="70" class="lunch-p" name="veckomeny"></textarea>
             </div>
             <button>Spara</button>
         </form>
@@ -64,7 +57,7 @@
 
     </main>
     <footer>
-        <div class="information">
+        <div class="informationStart">
             <div>
                 <h2 class="lokalh2">här finns vi</h2>
                 <ul>
@@ -95,20 +88,15 @@
                         var map = new mapboxgl.Map({
                             container: 'map',
                             style: 'mapbox://styles/mapbox/streets-v11',
-                            zoom: 8.5,
-                            center: [18.037525, 59.438519],
+                            zoom: 13,
+                            center: [17.723015, 59.492018],
 
                         });
-                        var marker1 = new mapboxgl.Marker().setLngLat([18.047525, 59.338519]).addTo(map)
-                        var marker2 = new mapboxgl.Marker().setLngLat([17.723015, 59.492018]).addTo(map)
-
+                        var marker1 = new mapboxgl.Marker().setLngLat([17.723015, 59.492018]).addTo(map);
+                
                         var popup1 = new mapboxgl.Popup()
-                            .setLngLat([18.047525, 59.338519])
-                            .setHTML("<p>Sabbatsbergs sjukhus</p>")
-                            .addTo(map);
-                        var popup2 = new mapboxgl.Popup()
                             .setLngLat([17.723015, 59.492018])
-                            .setHTML("<p>Kungsängen Ålderdomshem</p>")
+                            .setHTML("<p>Kungsängen Älderboende</p>")
                             .addTo(map);
 
                             map.addControl(new mapboxgl.NavigationControl());

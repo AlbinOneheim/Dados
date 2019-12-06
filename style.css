@@ -21,9 +21,9 @@ header {
 }
 header .loga {
     width: 270px;
+    margin: 0 auto;
     margin-top: 20px;
-    padding-bottom: 10px;
-    margin-left: 95px;   
+    padding-bottom: 10px;   
 }
 header .loga:hover{
     cursor: pointer;
@@ -50,43 +50,27 @@ header .p-kontakt {
     font-family: sans-serif;
     font-weight: bold;
 }
-
-main .platser{
-    width: 100%;
-    height: 350px;
-    background: whitesmoke ;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
+header .platser{
+    padding-bottom: 30px;
 }
-main .platser div{
-    text-align: center;
-}  
-
-main .plats1, .plats2, .plats3{
-    background: #444242;
-    color: #fff;
-    text-decoration: none;
-    border: 3px solid #DD9933;
-    padding: 12px;
-    border-radius: 5px;
-    display: block;
-    width: 400px;
-    margin-left: 80px;
-    
+header ul{
+    margin-top: 10px;
 }
-main .plats1:hover, .plats2:hover, .plats3:hover{
+header li{
+    display: inline;
+    padding: 15px;
+}
+header li a{
+    color: #fff; 
+}
+header li a:hover{
+    transition-duration: 300ms;
+    color: #DD9933;
     cursor: pointer;
-    background: #444242;
-    border: 3px solid #444242;
-    transition-duration: 500ms;
 }
 main .vilkaarvigrid{
     display: grid;
     grid-template-columns:50% 50% ;
-
 }
 main .vilkaarvi{
     background: #252525;
@@ -126,10 +110,15 @@ footer{
     background-color: #424242;
     height: 400px;
 }
-footer .information{
+footer .informationStart{
     padding: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+footer .information{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 footer .lokalh2{
     font-size: 20px;
@@ -196,6 +185,7 @@ main .kontakta p{
     color: #767676;
     padding: 10px;
     font-weight: bold;
+    text-align: center;
 }
 main .kontaktaformulär{
     background: #444242;
@@ -226,7 +216,9 @@ main .kontaktaformulär input{
 }
 main .kontaktaformulär p{
     color: #999999;
+    margin-top: 10px;
     font-style: italic;
+    text-align: left;
 }
 main .kontaktaformulär select{
     width: 100px;
@@ -258,7 +250,7 @@ main .lunchmenyh2 {
     color: #DD9933;
     font-size: 60px;
     padding-top: 30px;
-    font-weight: 500;
+    font-weight: 100px;
 }
 main .lunchmenyh3 {
     text-align: center;
@@ -279,6 +271,16 @@ main .veckonummer:after{
     width: 90px;
     margin: auto;
     margin-top: 5px;  
+    margin-bottom: 40px;
+}
+main #tider-div{
+    width: 550px;
+    margin: 0 auto;
+    color: #767676;
+    margin-bottom: 50px;
+}
+main #tider-p{
+    padding: 10px;
 }
 main .dag {
     font-size: 30px;
@@ -290,12 +292,12 @@ main .matmeny {
     margin: auto;
     text-align: center;
     width: 400px;
+    margin-bottom: 100px;
 }
 main .lunch-p {
     font-size: 18px;
     padding-bottom: 30px;
     color: #767676;
-    margin-bottom: 50px;
 }
 main .pil-höger-1 {
     font-size: 28px;
@@ -375,36 +377,6 @@ main .cirklar .fa-truck{
     border-radius: 50%;
     margin-bottom: 30px;
 }
-main .catering-kontakt{
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-main .catering-kontakt h3{
-    font-family: sans-serif;
-    font-weight: normal;
-    margin-bottom: 50px;
-}
-main .catering-kontakt a{
-    color: #DD9933;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid #DD9933;
-    padding: 20px;
-    
-} 
-main .catering-kontakt a:hover{
-    cursor: pointer;
-    transition-delay: 300ms;
-    transition-duration: 800ms;
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid #DD9933;
-    background: #DD9933;
-    padding: 20px;
-} 
-
 /* CSS för mobil */
 @media (max-width: 800px){
     /* Enkel CSS-reset */

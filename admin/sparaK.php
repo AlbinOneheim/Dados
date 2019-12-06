@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!$_SESSION['login']) {
+    $_SESSION['login'] = false;
+    header("location: ./admin.php?från=sparaK");
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -10,23 +17,16 @@
     <?php
     
     $vecka = filter_input(INPUT_POST, 'vecka', FILTER_SANITIZE_STRING);
-    $måndag = filter_input(INPUT_POST, 'måndag', FILTER_SANITIZE_STRING);
-    $tisdag = filter_input(INPUT_POST, 'tisdag', FILTER_SANITIZE_STRING);
-    $onsdag = filter_input(INPUT_POST, 'onsdag', FILTER_SANITIZE_STRING);
-    $torsdag = filter_input(INPUT_POST, 'torsdag', FILTER_SANITIZE_STRING);
-    $fredag = filter_input(INPUT_POST, 'fredag', FILTER_SANITIZE_STRING);
+    $veckomeny = filter_input(INPUT_POST, 'veckomeny', FILTER_SANITIZE_STRING);
 
-    if ($måndag && $tisdag && $onsdag && $torsdag && $fredag && $vecka) {
+    if ($veckomeny && $vecka) {
         $filnamn = "meny-k-$vecka.txt";
         $handtag = fopen("../menyer/$filnamn", 'w');
-        fwrite($handtag, "$måndag\n");
-        fwrite($handtag, "$tisdag\n");
-        fwrite($handtag, "$onsdag\n");
-        fwrite($handtag, "$torsdag\n");
-        fwrite($handtag, "$fredag\n");
+        fwrite($handtag, "$veckomeny");
         fclose($handtag);
         echo "<h1>vecka $vecka har sparats</h1>";
         echo "<a href=\"./Akungsängen.php\">Gå tillbaka</a>";
+        echo "<a href=\"./logout.php\">Logga ut</a>";
     }
 
     ?>

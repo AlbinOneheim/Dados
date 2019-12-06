@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!$_SESSION['login']) {
+    $_SESSION['login'] = false;
+    header("location: ./admin.php?från=Astartsida");
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -12,6 +19,7 @@
             <h1 class="kontakta">Välj ställa för matmeny</h1>
             <a class="plats1" href="./Asabatsberg.php">Sabbatsberg</a>
             <a class="plats1" href="./Akungsängen.php">Kungsängen</a>
+            <a href="./logout.php">Logga ut</a>
         </div>
     </main>
 </body>

@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!$_SESSION['login']) {
+    $_SESSION['login'] = false;
+    header("location: ./admin.php?från=sparaS");
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -11,23 +18,17 @@
 
     $menyS = "sabatsberg.txt";
     
-    $måndag = filter_input(INPUT_POST, 'måndag', FILTER_SANITIZE_STRING);
-    $tisdag = filter_input(INPUT_POST, 'tisdag', FILTER_SANITIZE_STRING);
-    $onsdag = filter_input(INPUT_POST, 'onsdag', FILTER_SANITIZE_STRING);
-    $torsdag = filter_input(INPUT_POST, 'torsdag', FILTER_SANITIZE_STRING);
-    $fredag = filter_input(INPUT_POST, 'fredag', FILTER_SANITIZE_STRING);
+    $veckomeny = filter_input(INPUT_POST, 'veckomeny', FILTER_SANITIZE_STRING);
+    
 
-    if ($måndag && $tisdag && $onsdag && $torsdag && $fredag) {
+    if ($veckomeny) {
 
         $handtag = fopen($menyS, 'w');
-        fwrite($handtag, "$måndag\n");
-        fwrite($handtag, "$tisdag\n");
-        fwrite($handtag, "$onsdag\n");
-        fwrite($handtag, "$torsdag\n");
-        fwrite($handtag, "$fredag\n");
+        fwrite($handtag, "$veckomeny");
         fclose($handtag);
         echo "<h1>Matmenyn har sparats för Sabatsberg</h1>";
         echo "<a href=\"./Asabatsberg.php\">Gå tillbaka</a>";
+        echo "<a href=\"./logout.php\">Logga ut</a>";
     }
 
     ?>

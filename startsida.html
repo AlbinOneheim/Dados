@@ -5,33 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Startsida</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="kontainer">
         <header>
             <img class="loga" src="./bilder/dadoslogo.png" alt="">
-            <div class="mail">
-                <a class="a-kontakt" href="./kontakt.php">
-                    <i class='fa fa-envelope-o'></i>
-                    <p class="p-kontakt">Kontakt</p>
-                </a>
-            </div>
+                <div class="platser">
+                    <ul>
+                        <li><a href="./sabatsberg.php">Sabbatsbergs Sjukhus</a></li> 
+                        <li><a href="./catering.html">Catering</a></li> 
+                        <li><a href="kungsängen.php">Kungsängens Äldreboende</a></li>   
+                    </ul>
+                </div>
         </header>
         <main>
-            <div class="platser">
-                <div>
-                    <a href="./sabatsberg.php" class="plats1">Sabbatsbergs Sjukhus</a>
-                </div>
-                <div>
-                    <a href="./catering.html" class="plats2">Catering</a>
-                </div>
-                <div>
-                    <a href="kungsängen.php" class="plats3">Kungsängens Ålderdomshem</a>
-                </div>
-            </div>
             <div class="vilkaarvigrid">
                 <div class="vilkaarvi">
                     <h1 class="vilkaarvih1">Vilka är vi?</h1>
@@ -45,7 +35,7 @@
             </div>
         </main>
         <footer>
-            <div class="information">
+            <div class="informationStart">
                 <div>
                     <h2 class="lokalh2">här finns vi</h2>
                     <ul>
@@ -89,7 +79,7 @@
                             .addTo(map);
                         var popup2 = new mapboxgl.Popup()
                             .setLngLat([17.723015, 59.492018])
-                            .setHTML("<p>Kungsängen Ålderdomshem</p>")
+                            .setHTML("<p>Kungsängen Ålderboende</p>")
                             .addTo(map);
 
                             map.addControl(new mapboxgl.NavigationControl());

@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kontakt</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
-    <link rel="stylesheet" href="style.css">
+    
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <script src="./javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
-        <div class="mail">
-            <a href="./kontakt.php">
-                <i class='fa fa-envelope-o'></i>
-                <p class="p-kontakt">Kontakt</p>
-            </a>
-        </div>   
+        <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>   
+        <div class="platser">
+                <ul>
+                    <li><a href="./sabatsberg.php">Sabbatsbergs Sjukhus</a></li> 
+                    <li><a href="./catering.html">Catering</a></li> 
+                    <li><a href="kungsängen.php">Kungsängens Äldreboende</a></li>   
+                </ul>
+            </div>
     </header>
     <main>
         <div class="kontakta">
@@ -28,7 +30,7 @@
             <p>Gäller ditt meddelande catering? Glöm inte att lämna information om tema och antal gäster!</p>
         </div>
         <div class="kontaktaformulär">
-                <div>
+            <div>
                     <label>Ditt namn</label>
                     <input type="text" name="namn">    
                     <label>Telefon</label>
@@ -46,10 +48,10 @@
                     <textarea name="meddelande" class="meddelande" cols="30" rows="10"></textarea>
                     <button>Skicka</button>
                 </div>
-            </div>
+        </div>
     </main>
     <footer>
-        <div class="information">
+        <div class="informationStart">
             <div>
                 <h2 class="lokalh2">här finns vi</h2>
                 <ul>

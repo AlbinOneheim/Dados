@@ -1,13 +1,21 @@
+<?php
+session_start();
+if (!$_SESSION['login']) {
+    $_SESSION['login'] = false;
+    header("location: ./admin.php?från=Asabbatsberg");
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sabatsberg</title>
-    <link rel="stylesheet" href="../style.css">
+    
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
@@ -23,38 +31,23 @@
         <h2 class="lunchmenyh2">Lunchmeny</h2>
         <h3 class="lunchmenyh3">Sabatsbergs sjukhus</h3>
         <a class="plats1" href="./Akungsängen.php">Gå till kungängens matmeny</a>
+        <a href="./logout.php">Logga ut</a>
         <?php
             
             echo "<h4 class=\"veckonummer\">Vecka" . date("W") . "</h4>";
         ?>
         <form action="sparaS.php" class="matmeny" method="POST">
-            <div class="måndag">
-                <label class="dag">Måndag</label>
-                <textarea class="lunch-p" name="måndag"></textarea>
+            <div class="veckomeny">
+                <label class="dag">Vecko meny</label>
+                <textarea rows="30" cols="70" class="lunch-p" name="veckomeny"></textarea>
             </div>
-            <div class="tisdag">
-                <label class="dag">Tisdag</label>
-                <textarea class="lunch-p" name="tisdag"></textarea>
-            </div>
-            <div class="onsdag">
-                <label class="dag">Onsdag</label>
-                <textarea class="lunch-p" name="onsdag"></textarea>
-            </div>
-            <div class="torsdag">
-                <label class="dag">Torsdag</label>
-                <textarea class="lunch-p" name="torsdag"></textarea>
-            </div>
-            <div class="fredag">
-                <label class="dag">Fredag</label>
-                <textarea class="lunch-p" name="fredag"></textarea>
-            </div>
-            <button>Skicka</button>
+            <button>Spara</button>
         </form>
 
 
     </main>
     <footer>
-        <div class="information">
+        <div class="informationStart">
             <div>
                 <h2 class="lokalh2">här finns vi</h2>
                 <ul>
@@ -85,20 +78,15 @@
                         var map = new mapboxgl.Map({
                             container: 'map',
                             style: 'mapbox://styles/mapbox/streets-v11',
-                            zoom: 8.5,
-                            center: [18.037525, 59.438519],
+                            zoom: 13,
+                            center: [18.047525, 59.338519],
 
                         });
-                        var marker1 = new mapboxgl.Marker().setLngLat([18.047525, 59.338519]).addTo(map)
-                        var marker2 = new mapboxgl.Marker().setLngLat([17.723015, 59.492018]).addTo(map)
+                        var marker1 = new mapboxgl.Marker().setLngLat([18.047525, 59.338519]).addTo(map);
 
                         var popup1 = new mapboxgl.Popup()
                             .setLngLat([18.047525, 59.338519])
                             .setHTML("<p>Sabbatsbergs sjukhus</p>")
-                            .addTo(map);
-                        var popup2 = new mapboxgl.Popup()
-                            .setLngLat([17.723015, 59.492018])
-                            .setHTML("<p>Kungsängen Ålderdomshem</p>")
                             .addTo(map);
 
                             map.addControl(new mapboxgl.NavigationControl());
