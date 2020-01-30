@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>   
+        <a href="./index.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>   
         <div class="platser">
                 <ul>
                     <li><a href="./sabatsberg.php">Sabbatsbergs Sjukhus</a></li> 

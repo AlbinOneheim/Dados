@@ -166,6 +166,10 @@ footer .karta{
     width: 400px;
     height: 300px;
 }
+footer #map{
+    width: 400px; 
+    height: 300px;
+}
 
 /* css för kontakt */
 main .kontakta{
@@ -377,6 +381,20 @@ main .cirklar .fa-truck{
     border-radius: 50%;
     margin-bottom: 30px;
 }
+main .catering-bilder{
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+main .bild{
+    padding: 3px;
+    width: 300px;
+}
+
+
+
+
 /* CSS för mobil */
 @media (max-width: 800px){
     /* Enkel CSS-reset */
@@ -390,7 +408,6 @@ main .cirklar .fa-truck{
         margin: 0;
         padding: 0;
     }
-
     /* CSS för startsida mobil */
     header {
         background: #252525;
@@ -470,12 +487,8 @@ main .cirklar .fa-truck{
         width: 100%;
         max-width: 100%;
     }
-    footer{
+    footer .informationStart{
         background-color: #424242;
-        height: 400px;
-    }
-    footer .information{
-        padding: 50px;
         display: grid;
         grid-template-columns: 1fr;
     }
@@ -521,8 +534,14 @@ main .cirklar .fa-truck{
         margin-left: 30px;
     }
     footer .karta{
-        background: #fff;
+        background: #424242;
         width: 400px;
         height: 300px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    footer #map{
+        width: 250px; 
+        height: 200px;
     }
 }

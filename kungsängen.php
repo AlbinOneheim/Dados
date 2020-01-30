@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kungsängen</title>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>  
+    <title>Kungsängen</title>  
     <link rel="stylesheet" href="style.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet'/>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 </head>
 <body>
     <header>
-        <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
+        <a href="./index.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
         <div class="platser">
                 <ul>
                     <li><a href="./sabatsberg.php">Sabbatsbergs Sjukhus</a></li> 
@@ -71,7 +71,6 @@
     <div>
         <h2 class="lokalh2">här finns vi</h2>
         <ul>
-            <li class="lokal"><i class="fa fa-home"></i>Olivecronas väg 5, 113 61   Stockholm</li>
             <li class="lokal"><i class="fa fa-home"></i>Kungsängens Ålderdomshem</li>
             <li class="lokal"><i class="fa fa-envelope"></i>sabb.lunch@live.se</li>
         </ul>

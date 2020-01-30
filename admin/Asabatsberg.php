@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('disply_errors', 1);
+include_once "konfig-db.php";
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -29,14 +34,36 @@
             
             echo "<h4 class=\"veckonummer\">Vecka" . date("W") . "</h4>";
         ?>
-        <form action="sparaS.php" class="matmeny" method="POST">
+        <form action="#" class="matmeny" method="POST">
             <div class="veckomeny">
                 <label class="dag">Vecko meny</label>
-                <textarea rows="30" cols="70" class="lunch-p" name="veckomeny"></textarea>
+                <textarea rows="30" cols="70" class="lunch-p" name="veckomeny" required></textarea>
             </div>
             <button>Spara</button>
         </form>
+        <?php
+        $veckomeny = filter_input(INPUT_POST, 'veckomeny', FILTER_SANITIZE_STRING);
+    
 
+        if ($veckomeny) {
+            $conn = new mysqli($host, $användare, $lösenord, $databas);
+    
+            if ($conn->connect_error) {
+                die("Kunde inte ansluta till databasen: " . $conn->connect_error);
+            }
+            $vecka = date("W");
+            $ar = date("Y");
+            $sql = "INSERT INTO sabatsberg (meny, vecka, ar) VALUES ('$veckomeny', '$vecka', '$ar')";
+            $result = $conn->query($sql);
+    
+            if (!$result) {
+                die("Något blev fel med SQL-statsen.");
+            }else {
+                echo "<p class=\"alert alert-success\">Menyn har sparats!</p>";
+            }
+            $conn->close();
+        }
+        ?>
 
     </main>
     <footer>

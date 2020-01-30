@@ -1,5 +1,4 @@
 AuthName "Lösenord krväs"
 AuthType Basic
-AuthUserFile /customers/3/6/2/dadoskok.se/httpd.www/test/admin/.htpasswd
-AuthGroupFile /dev/null 
+AuthUserFile /app/EE17-ar2/Dados/.htpasswd
 require valid-user

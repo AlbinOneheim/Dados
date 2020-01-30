@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('disply_errors', 1);
+include_once "konfig-db.php";
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -8,17 +13,27 @@
 </head>
 <body>
     <?php
-
-    $menyS = "sabatsberg.txt";
     
     $veckomeny = filter_input(INPUT_POST, 'veckomeny', FILTER_SANITIZE_STRING);
     
 
     if ($veckomeny) {
+        $conn = new mysqli($host, $användare, $lösenord, $databas);
 
-        $handtag = fopen($menyS, 'w');
-        fwrite($handtag, "$veckomeny");
-        fclose($handtag);
+        if ($conn->connect_error) {
+            die("Kunde inte ansluta till databasen: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM sabatsberg";
+        $result = $conn->query($sql);
+
+        if (!$result) {
+            die("Något blev fel med SQL-statsen.");
+        }
+
+        while ($rad = $result->fetch_assoc()) {
+            
+        }
         echo "<h1>Matmenyn har sparats för Sabatsberg</h1>";
         echo "<a href=\"./Asabatsberg.php\">Gå tillbaka</a>";
         echo "<a href=\"./logout.php\">Logga ut</a>";

@@ -1,17 +1,22 @@
+<?php
+error_reporting(E_ALL);
+ini_set('disply_errors', 1);
+include_once "./admin/konfig-db.php";
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sabatsberg</title>
-    <link rel="stylesheet" href="style.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="./startsida.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
+        <a href="./index.html"><img class="loga" src="./bilder/dadoslogo.png" alt=""></a>
         </div>
             <div class="platser">
                 <ul>
@@ -27,25 +32,36 @@
         <?php 
             echo "<div id=\"tider-div\">
             <p id=\"tider-p\">ÖPPET TIDER</p>
-            <p id=\"tider-p\">Vardag 07.00-16.00</p>
-            <p id=\"tider-p\"><strong>Lunch(10.30-14.00)</strong> Inkl. smör, bröd, sallad, läsk och kaffe 95:-</p>
-            <p id=\"tider-p\">Häfte på 10 st luncher inkl. allt 800:-</p>
+            <p id=\"tider-p\">(Måndag - fredag <strong>07.00-16.00</strong>)</p>
+            <p id=\"tider-p\"><strong>Lunch (10.30-13.30)</strong> Inkl. smör, bröd, sallad, läsk och kaffe <strong>100:-</strong></p>
+            <p id=\"tider-p\"><strong>OBS!</strong> Häfte på 10 st luncher inkl. allt <strong>850:-</strong></p>
             </div>";
 
             echo "<h4 class=\"veckonummer\">Vecka " . date("W") . "</h4>";
             
-
-            $rader = file("./admin/sabatsberg.txt");
-            echo "<div class=\"matmeny\">";
-            foreach ($rader as $rad) {
-                
-                echo "<div><p class=\"lunch-p\">$rad</p></div>";   
-            }
-           echo "</div>";
-        ?>
+            $conn = new mysqli($host, $användare, $lösenord, $databas);
         
+            if ($conn->connect_error) {
+                die("Kunde inte ansluta till databasen: " . $conn->connect_error);
+            }
+        
+            $query = "SELECT * FROM sabatsberg";
+            $result = $conn->query($query);
+        
+            if (!$result) {
+                die("Något blev fel med SQL-statsen.");
+            }
 
-
+            while ($rad = $result->fetch_assoc()) {
+                $rad = $rad[meny];
+                preg_replace( "/[\r\n]+/", "<br>", $rad);
+                $rad = nl2br($rad, false);
+                
+                echo "<div>";
+                echo "<p class=\"lunch-p\">$rad</p>";
+                echo "</div>";
+            }
+        ?>
     </main>
     <footer>
         <div class="information">
@@ -53,7 +69,6 @@
                 <h2 class="lokalh2">här finns vi</h2>
                 <ul>
                     <li class="lokal"><i class="fa fa-home"></i>Olivecronas väg 5, 113 61 Stockholm</li>
-                    <li class="lokal"><i class="fa fa-home"></i>Kungsängens Ålderdomshem</li>
                     <li class="lokal"><i class="fa fa-envelope"></i>sabb.lunch@live.se</li>
                 </ul>
             </div>
